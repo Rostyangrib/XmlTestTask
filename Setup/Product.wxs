@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+  <Package Name="XmlToDb"
+           Manufacturer="XmlToDb"
+           Version="1.0.0.0"
+           UpgradeCode="8E1C2B4F-6D3A-49B7-9A21-2C7D5E0F3B18"
+           Scope="perMachine">
+
+    <MajorUpgrade DowngradeErrorMessage="Уже установлена более новая версия [ProductName]." />
+
+    <!-- Всё из папки сборки, включая подпапки x86 и x64 с нативными библиотеками SQLite. -->
+    <StandardDirectory Id="ProgramFiles6432Folder">
+      <Directory Id="INSTALLFOLDER" Name="XmlToDb">
+        <Files Include="$(var.BinDir)\**">
+          <Exclude Files="$(var.BinDir)\**\*.pdb" />
+        </Files>
+      </Directory>
+    </StandardDirectory>
+
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ShortcutFolder" Name="XmlToDb">
+        <Component>
+          <Shortcut Name="XmlToDb" Target="[INSTALLFOLDER]XmlToDb.exe" WorkingDirectory="INSTALLFOLDER" />
+          <RemoveFolder Id="RemoveShortcutFolder" On="uninstall" />
+          <RegistryValue Root="HKCU" Key="Software\XmlToDb" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+        </Component>
+      </Directory>
+    </StandardDirectory>
+
+  </Package>
+
+</Wix>

@@ -1,0 +1,44 @@
+/* Оформление страницы */
+
+body { margin: 0; font-family: "Segoe UI", sans-serif; font-size: 14px; color: #22303f; background: #f4f6f9; }
+
+.header { background: #2f5d8c; color: #fff; padding: 16px 0; }
+.header div, .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.header b { font-size: 20px; margin-right: 12px; }
+
+.container { padding-top: 24px; }
+
+.upload, .panel {
+    background: #fff;
+    border: 1px solid #dde3ea;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.upload button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #2f5d8c;
+    color: #fff;
+    cursor: pointer;
+}
+
+.error { color: #a03b3b; }
+
+.columns { display: grid; grid-template-columns: 340px 1fr; gap: 16px; align-items: start; }
+
+.panel h1 { font-size: 15px; margin: 0 0 12px; }
+.panel ul { list-style: none; margin: 0; padding: 0; }
+
+.panel li { padding: 10px; border-radius: 6px; cursor: pointer; word-break: break-all; }
+.panel li:hover { background: #f2f6fb; }
+.panel li.selected { background: #e6eff9; }
+
+.date { display: block; color: #8a97a6; font-size: 12px; }
+
+.card h2 { font-size: 15px; margin: 0 0 12px; }
+.card-table { border-collapse: collapse; width: 100%; }
+.card-table th, .card-table td { border: 1px solid #e1e7ee; padding: 8px 12px; text-align: left; }
+.card-table th { width: 220px; background: #f5f8fb; font-weight: 500; color: #55657a; }

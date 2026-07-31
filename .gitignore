@@ -1,0 +1,10 @@
+bin/
+docs/
+obj/
+.vs/
+
+*.user
+*.suo
+
+*.wixpdb
+XmlToDb.Web/App_Data/

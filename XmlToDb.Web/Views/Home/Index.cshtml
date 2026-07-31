@@ -1,0 +1,28 @@
+@model List<DocumentInfo>
+
+<form class="upload" method="post" asp-action="Upload" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xml" />
+    <button type="submit">Загрузить в базу</button>
+</form>
+
+@if (TempData["Error"] != null)
+{
+    <p class="error">@TempData["Error"]</p>
+}
+
+<div class="columns">
+    <div class="panel">
+        <h1>Файлы в базе (@Model.Count)</h1>
+        <ul id="documents">
+            @foreach (var document in Model)
+            {
+                <li data-id="@document.Id">
+                    @document.FileName
+                    <span class="date">@document.LoadDate</span>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div class="panel" id="card">Выберите файл в списке слева.</div>
+</div>
